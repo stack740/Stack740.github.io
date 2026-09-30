@@ -1,107 +1,455 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mandy's personal website, CMCT student.">
-  <title>Mandy | CMCT Student</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mandy — CMCT student at HSUHK. A personal site about my studies, my music practice on piano, flute and voice, and the small projects I build along the way.">
+<meta name="author" content="Mandy">
+<meta name="theme-color" content="#3b2a5a">
+<title>Mandy · CMCT Student · Music &amp; Code</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mandy · CMCT Student">
+<meta property="og:description" content="Studies, music practice and small projects — recorded simply and clearly.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236d4fc4'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='Georgia' fill='%23fdfbff'>M</text></svg>">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top">Mandy</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills &amp; Interests</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <main id="top">
-    <section class="welcome container" aria-labelledby="welcome-title">
-      <div class="welcome-copy">
-        <p class="eyebrow">CMCT STUDENT · HONG KONG</p>
-        <h1 id="welcome-title">Hi, I'm <span>Mandy</span></h1>
-        <p class="welcome-text">Welcome to my little corner of the internet — a place for my studies, my interests, and the projects I'm slowly building.</p>
-        <a class="button" href="#projects">See my projects <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="welcome-mark" aria-hidden="true">Mandy</div>
-    </section>
+<div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
 
-    <section class="section container" id="about" aria-labelledby="about-title">
-      <div class="section-heading">
-        <p class="eyebrow">01 / ABOUT</p>
-        <h2 id="about-title">About Me</h2>
-      </div>
-      <div class="about-content">
-        <p class="lead">Hello! I'm Mandy. I come from China and I'm currently studying in the CMCT programme at Hang Seng University of Hong Kong.</p>
-        <p>I love discovering new possibilities while learning, and I try to record my ideas in simple, clear ways.</p>
-      </div>
-    </section>
+<header class="site-header" id="siteHeader">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-text">Mandy</span>
+    </a>
 
-    <section class="section section-tinted" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">02 / INTERESTS</p>
-          <h2 id="skills-title">Skills &amp; Interests</h2>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#music">Music log</a></li>
+      <li><a href="#study">Study</a></li>
+      <li><a class="nav-cta" href="#contact">Say hello</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">CMCT STUDENT · HONG KONG, CHINA</p>
+        <h1 class="reveal">
+          Hi, I'm <span class="name-accent">Mandy</span><span class="dot">.</span>
+        </h1>
+        <p class="hero-text reveal">
+          Welcome to my little corner of the internet — a place for my studies, my music,
+          and the projects I'm slowly building.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projects">See my projects <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="#music">Read my music log</a>
         </div>
-        <ul class="interest-list" aria-label="Skills and interests list">
-          <li><span class="interest-number">01</span><span>Piano</span></li>
-          <li><span class="interest-number">02</span><span>Flute</span></li>
-          <li><span class="interest-number">03</span><span>Singing</span></li>
-        </ul>
-      </div>
-    </section>
 
-    <section class="section container" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading projects-heading">
+        <dl class="hero-stats reveal">
+          <div>
+            <dt>Study</dt>
+            <dd>CMCT · HSUHK</dd>
+          </div>
+          <div>
+            <dt>Instruments</dt>
+            <dd>Piano · Flute · Voice</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Hong Kong, China</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="disc">
+          <div class="disc-ring"></div>
+          <div class="disc-label">
+            <span class="disc-name">Mandy</span>
+            <span class="disc-sub">now playing</span>
+          </div>
+        </div>
+        <div class="staff" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PIANO PRACTICE</span><em>·</em>
+        <span>FLUTE TONE</span><em>·</em>
+        <span>SINGING</span><em>·</em>
+        <span>CMCT STUDY NOTES</span><em>·</em>
+        <span>PIANO PRACTICE</span><em>·</em>
+        <span>FLUTE TONE</span><em>·</em>
+        <span>SINGING</span><em>·</em>
+        <span>CMCT STUDY NOTES</span><em>·</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 / ABOUT</p>
+        <h2 id="about-title">About me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-main reveal">
+          <p class="lead">
+            Hello! I'm Mandy. I come from China and I'm currently studying in the CMCT
+            programme at Hang Seng University of Hong Kong.
+          </p>
+          <p>
+            I love discovering new possibilities while learning, and I try to record my ideas
+            in simple, clear ways. Most of what I know about music came from years of practice
+            rather than talent — which is exactly why I trust slow, repeated work.
+          </p>
+          <p>
+            This site is where those two habits meet: the careful note-taking of a student and
+            the listening ear of a musician. Nothing here is finished, and that's on purpose.
+          </p>
+        </div>
+
+        <aside class="about-facts reveal" aria-label="Quick facts">
+          <h3>Quick facts</h3>
+          <ul class="fact-list">
+            <li><span>Programme</span><strong>CMCT, HSUHK</strong></li>
+            <li><span>From</span><strong>China</strong></li>
+            <li><span>Studying in</span><strong>Hong Kong, China</strong></li>
+            <li><span>Plays</span><strong>Piano · Flute · Voice</strong></li>
+            <li><span>Currently</span><strong>Learning to build things</strong></li>
+          </ul>
+          <p class="fact-note">
+            I keep this page updated as my practice and my coursework move forward.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-tinted" id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">02 / SKILLS &amp; INTERESTS</p>
+        <h2 id="skills-title">What I spend time on</h2>
+        <p class="section-sub">
+          Three instruments I keep coming back to, one programme I'm studying,
+          and a growing set of small digital habits.
+        </p>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill-card reveal">
+          <span class="skill-index">01</span>
+          <h3>Piano</h3>
+          <p class="skill-years">Longest-running practice</p>
+          <p>Classical pieces and pop arrangements, mostly. Reading two lines at once is still the hardest part.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:88%"></span></div>
+        </article>
+
+        <article class="skill-card reveal">
+          <span class="skill-index">02</span>
+          <h3>Flute</h3>
+          <p class="skill-years">Breath, tone, ensemble</p>
+          <p>I like the clear, bright sound and how unforgiving it is — a tiny change in breath changes everything.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:74%"></span></div>
+        </article>
+
+        <article class="skill-card reveal">
+          <span class="skill-index">03</span>
+          <h3>Singing</h3>
+          <p class="skill-years">Expression first</p>
+          <p>Warm-ups are unglamorous but they work. Singing is how I put a feeling into a room.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:80%"></span></div>
+        </article>
+
+        <article class="skill-card reveal skill-card-alt">
+          <span class="skill-index">04</span>
+          <h3>CMCT coursework</h3>
+          <p class="skill-years">Current focus</p>
+          <p>Media, communication and technology — the reason this website exists at all.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:66%"></span></div>
+        </article>
+
+        <article class="skill-card reveal skill-card-alt">
+          <span class="skill-index">05</span>
+          <h3>Note-taking &amp; writing</h3>
+          <p class="skill-years">Daily habit</p>
+          <p>Clear notes beat clever notes. I try to write things down the same day I learn them.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:82%"></span></div>
+        </article>
+
+        <article class="skill-card reveal skill-card-alt">
+          <span class="skill-index">06</span>
+          <h3>Building with AI</h3>
+          <p class="skill-years">New and growing</p>
+          <p>Describing what I want, checking what comes back, and fixing what doesn't work.</p>
+          <div class="meter" aria-hidden="true"><span style="--w:55%"></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-head section-head-row reveal">
         <div>
           <p class="eyebrow">03 / WORK IN PROGRESS</p>
           <h2 id="projects-title">Projects</h2>
         </div>
         <p class="section-note">Three little things about music</p>
       </div>
+
       <div class="project-grid">
-        <article class="project-card">
-          <p class="card-number">PROJECT 01</p>
-          <h3>Piano · Daily Practice</h3>
-          <p>From classical pieces to pop arrangements, I enjoy every conversation between my fingers and the keys — and I'm slowly recording my practice notes here.</p>
-          <a href="#contact">Let's talk piano <span aria-hidden="true">↗</span></a>
+        <article class="project-card reveal">
+          <div class="card-top">
+            <p class="card-number">PROJECT 01</p>
+            <span class="card-tag">Practice</span>
+          </div>
+          <h3>Piano · Daily practice</h3>
+          <p>
+            From classical pieces to pop arrangements, I enjoy every conversation between my
+            fingers and the keys — and I'm slowly recording my practice notes here.
+          </p>
+          <ul class="card-list">
+            <li>Warm-ups before anything else</li>
+            <li>One hard bar at a time, slowly</li>
+            <li>Practice notes written the same day</li>
+          </ul>
+          <a class="card-link" href="#contact">Let's talk piano <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="project-card featured-card">
-          <p class="card-number">PROJECT 02</p>
-          <h3>Flute · Exploring Tone</h3>
-          <p>The flute's clear, bright tone fascinates me. Breath control, careful tuning, and the chemistry of playing alongside friends keep me hooked.</p>
-          <a href="#contact">Let's talk flute <span aria-hidden="true">↗</span></a>
+
+        <article class="project-card featured-card reveal">
+          <div class="card-top">
+            <p class="card-number">PROJECT 02</p>
+            <span class="card-tag card-tag-light">Favourite</span>
+          </div>
+          <h3>Flute · Exploring tone</h3>
+          <p>
+            The flute's clear, bright tone fascinates me. Breath control, careful tuning, and
+            the chemistry of playing alongside friends keep me hooked.
+          </p>
+          <ul class="card-list">
+            <li>Long tones, every session</li>
+            <li>Tuning against a drone</li>
+            <li>Listening more than playing</li>
+          </ul>
+          <a class="card-link" href="#contact">Let's talk flute <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="project-card">
-          <p class="card-number">PROJECT 03</p>
-          <h3>Singing · Finding My Voice</h3>
-          <p>Singing is how I express my feelings. From warm-up exercises to performing a favourite song, I hope to share my voice and growth here.</p>
-          <a href="#contact">Let's talk singing <span aria-hidden="true">↗</span></a>
+
+        <article class="project-card reveal">
+          <div class="card-top">
+            <p class="card-number">PROJECT 03</p>
+            <span class="card-tag">Expression</span>
+          </div>
+          <h3>Singing · Finding my voice</h3>
+          <p>
+            Singing is how I express my feelings. From warm-up exercises to performing a
+            favourite song, I hope to share my voice and growth here.
+          </p>
+          <ul class="card-list">
+            <li>Breathing from the diaphragm</li>
+            <li>Recording myself to hear honestly</li>
+            <li>One full song, start to finish</li>
+          </ul>
+          <a class="card-link" href="#contact">Let's talk singing <span aria-hidden="true">↗</span></a>
         </article>
       </div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-content">
-        <div>
-          <p class="eyebrow">04 / SAY HELLO</p>
-          <h2 id="contact-title">Get in Touch</h2>
-        </div>
-        <a class="contact-link" href="mailto:s235075@hsu.edu.hk">s235075@hsu.edu.hk <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>Mandy · CMCT student</p>
-      <p>© 2026</p>
     </div>
-  </footer>
+  </section>
+
+  <!-- ============ MUSIC LOG (interactive) ============ -->
+  <section class="section section-dark" id="music" aria-labelledby="music-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">04 / MUSIC LOG</p>
+        <h2 id="music-title">What I'm practising</h2>
+        <p class="section-sub">
+          A small practice tracker. Pick an instrument to see what I'm working on
+          and the habit I'm trying to build.
+        </p>
+      </div>
+
+      <div class="tabs reveal" role="tablist" aria-label="Instruments">
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-piano" id="tab-piano" data-target="panel-piano">Piano</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-flute" id="tab-flute" data-target="panel-flute" tabindex="-1">Flute</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-voice" id="tab-voice" data-target="panel-voice" tabindex="-1">Voice</button>
+      </div>
+
+      <div class="tab-panels reveal">
+        <div class="tab-panel is-active" id="panel-piano" role="tabpanel" aria-labelledby="tab-piano">
+          <div class="panel-text">
+            <h3>Piano</h3>
+            <p class="panel-goal"><strong>This month's goal:</strong> play one piece from memory, without stopping, even when I make a mistake.</p>
+            <p>
+              I still practise hands separately on anything new. It feels slower, but the piece
+              holds together far better afterwards.
+            </p>
+          </div>
+          <ul class="practice-list">
+            <li><span class="dot-mark"></span>Scales &amp; arpeggios — 10 minutes</li>
+            <li><span class="dot-mark"></span>Current piece, hands separately</li>
+            <li><span class="dot-mark"></span>Current piece, hands together, slowly</li>
+            <li><span class="dot-mark"></span>One bar I keep getting wrong</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="panel-flute" role="tabpanel" aria-labelledby="tab-flute" hidden>
+          <div class="panel-text">
+            <h3>Flute</h3>
+            <p class="panel-goal"><strong>This month's goal:</strong> hold a steady tone through a long phrase without my pitch drifting sharp.</p>
+            <p>
+              Tone is the whole instrument. I would rather play four beautiful long notes than
+              rush through a page.
+            </p>
+          </div>
+          <ul class="practice-list">
+            <li><span class="dot-mark"></span>Long tones, low register</li>
+            <li><span class="dot-mark"></span>Long tones, high register</li>
+            <li><span class="dot-mark"></span>Tuning against a drone</li>
+            <li><span class="dot-mark"></span>Ensemble part — listening first</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="panel-voice" role="tabpanel" aria-labelledby="tab-voice" hidden>
+          <div class="panel-text">
+            <h3>Voice</h3>
+            <p class="panel-goal"><strong>This month's goal:</strong> sing a full song and actually enjoy the performance instead of monitoring myself.</p>
+            <p>
+              Recording myself was uncomfortable at first, but it is the only honest way to know
+              what I actually sound like.
+            </p>
+          </div>
+          <ul class="practice-list">
+            <li><span class="dot-mark"></span>Breathing and posture</li>
+            <li><span class="dot-mark"></span>Warm-ups, top to bottom</li>
+            <li><span class="dot-mark"></span>One phrase, repeated</li>
+            <li><span class="dot-mark"></span>Full run-through, recorded</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDY ============ -->
+  <section class="section" id="study" aria-labelledby="study-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">05 / STUDY</p>
+        <h2 id="study-title">Studies at HSUHK</h2>
+        <p class="section-sub">
+          A short record of what I'm learning, written in my own words so it stays useful to me.
+        </p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <p class="timeline-tag">In progress</p>
+            <h3>CMCT programme</h3>
+            <p>
+              My main programme at Hang Seng University of Hong Kong. The mix of media,
+              communication and technology suits me — it rewards both structure and expression.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <p class="timeline-tag">This semester</p>
+            <h3>Artificial Intelligence and Its Applications</h3>
+            <p>
+              Where I built this website. Describing what you want precisely turns out to be a
+              real skill, and reviewing output is not optional.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <p class="timeline-tag">Ongoing</p>
+            <h3>Music, outside the classroom</h3>
+            <p>
+              Practice is its own kind of coursework. It taught me that progress is mostly
+              invisible, and that consistency beats intensity.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-content">
+      <div class="reveal">
+        <p class="eyebrow">06 / SAY HELLO</p>
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="contact-lead">
+          Happy to talk about piano, flute, singing, or anything to do with studying at HSUHK.
+          Email is the most reliable way to reach me.
+        </p>
+      </div>
+      <div class="contact-actions reveal">
+        <a class="contact-link" href="mailto:s235075@hsu.edu.hk">s235075@hsu.edu.hk <span aria-hidden="true">↗</span></a>
+        <p class="contact-meta">Mandy · CMCT student</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p class="footer-brand">Mandy · CMCT student</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#music">Music log</a>
+      <a href="#study">Study</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="footer-note">© 2026 · Built with AI assistance, reviewed by me.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top" hidden>↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
